@@ -1,0 +1,36 @@
+
+
+.detelseproduct img{
+ width: 200px;
+ height: 400px;
+ border-radius: 10px;
+}
+.detelseproduct h1{
+    color: var(--colerp);
+    padding-top: 80px;
+    font-size: 22px;
+}
+.detelseproduct h3{
+    color: var(--colerp);
+    padding-top: 20px;
+    font-size: 20px;
+}
+.detelseproduct h4{
+    color: var(--colerp);
+    padding-top: 20px;
+
+    font-size: 20px;
+}
+.detelseproduct h5{
+    color: var(--colerp);
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+.basketQuantity{
+    opacity: 0.5;
+}
+.MassageMaxValue{
+    color: #DB4444;
+    opacity: 0.8;
+    font-size: 12px;
+  }

@@ -1,0 +1,12 @@
+.usernamestyle{
+
+    color: var(--backgroud);
+  padding-bottom: 50px;
+
+  }
+  .usernamestyle h1{
+      font-size: 20px;
+  }
+  .usernamestyle span{
+    color:#DB4444 ;
+  }

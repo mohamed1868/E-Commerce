@@ -1,0 +1,77 @@
+:root{
+   --backgroud : black;
+--color : white ;
+
+}
+
+.dark{
+  --backgroud : #f6f6f6;
+  --color : black ;
+}
+
+  #moon{
+    visibility: hidden; 
+    color: var(--color);
+    
+  }
+  #sun{
+    color: var(--color);
+  }
+  .darkmodeicone {
+   margin-top: 12px;
+   margin-right: 20px;
+   position: relative;
+  }
+  @media (max-width:991px){
+    .darkmodeicone {
+       
+       
+      margin-bottom: 30px;
+ 
+       }
+  }
+  .darkmodeicone i {
+  position: absolute;
+    font-size: 18px;
+  }
+  
+
+ .header{
+
+    background-color: var(--backgroud) !important;
+    box-shadow: 2px 2px 2px 2px var(--backgroud);
+    border-radius: 2px;
+ } 
+ .header .iconcoler{
+  background-color: var(--color) !important;
+ }
+
+.containerlogo h1{
+  font-size: 22px;
+  
+}
+.firestlogo{
+  color: var(--backgroud) !important;
+}
+
+
+.header a{
+    color: var(--color) !important;
+}
+.language1{
+    background-color: var(--color) !important;
+}
+.header span{
+  color: var(--color) !important;
+  cursor: pointer;
+}
+.containerheader2{
+  margin-top: 20px;
+}
+.header1{
+  margin-bottom: 50px;
+}
+.activeHeader{
+  border-bottom: 1.5px solid var(--color);
+ 
+}

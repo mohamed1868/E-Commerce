@@ -1,0 +1,34 @@
+:root {
+    --backpage : white;
+    --colerp : black ;
+    
+  }
+  .dark{
+    --backpage  : black;
+    --colerp : white ;
+  }
+
+.register{
+   
+    margin-top: 40px;
+ 
+  }
+
+  .register label{
+    color: var(--colerp);
+  }
+  .register input{
+    background-color: var(--backpage);
+    color: var(--colerp);
+  }
+  .register input:focus{
+    background-color: var(--backpage);
+  }
+  
+ 
+  .submit{
+    background-color:#db4444 ;
+    border-color: #db4444;
+  }
+
+  

@@ -1,0 +1,16 @@
+.texterror{
+    color: red;
+
+}
+i{
+    font-size: 65px;
+    color: red;
+    padding-bottom: 50px;
+}
+.box{
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15%;
+}

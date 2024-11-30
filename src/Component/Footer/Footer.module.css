@@ -1,0 +1,19 @@
+:root {
+
+    --colerp : black ;
+    
+  }
+  .dark{
+
+    --colerp : white ;
+  }
+
+
+.footerContainer {
+    margin-top: auto;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid var(--colerp);
+    color: var(--colerp);
+    margin-top: 20px;
+  }

@@ -1,0 +1,62 @@
+:root {
+    --backpage : white;
+    --colerp : black ;
+    
+  }
+  .dark{
+    --backpage  : black;
+    --colerp : white ;
+  }
+  
+  
+  .product {
+      width: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-left: 80px;
+    }
+    .ProductsAll{
+      margin-left: 4%;
+    }
+    
+    .productImg img {
+      width: 100%;
+      height: 180px;
+      background-color: #f2f2f2;
+      display: block;
+      border-radius: 10px;
+    }
+    
+    
+    .product h2 {
+      font-size: 17px;
+      margin-top: 9px;
+      margin-bottom: 12px;
+      width: 100%;
+  
+      color: var(--colerp);
+    }
+    
+    .product h3 {
+      font-size: 13px;
+      color: var(--colerp);
+    }
+    button{
+      background-color: #DB4444;
+      border-color: #DB4444;
+      color: var(--colerp);
+    }
+    .nameproducss{
+      color: var(--colerp);
+      font-size: 25px; 
+      letter-spacing: 1.6;
+      text-align: center;
+      margin-left: 5%;
+    }
+    .MassageMaxValue{
+      color: #DB4444;
+      opacity: 0.8;
+      font-size: 10px;
+      height: 5px;
+    }

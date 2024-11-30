@@ -1,0 +1,43 @@
+:root {
+
+  --colerp : black ;
+  
+}
+.dark{
+
+  --colerp : white ;
+}
+
+
+.category {
+    width: 180px;
+    height: 180px;
+    margin-left: 80px;
+  }
+  .CategoryAll{
+    margin-left: 4%;
+
+  }
+  
+  .categoryImg {
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: #f2f2f2;
+  }
+  .categoryImg img {
+    width: 100%;
+  }
+  
+  .categoryTitle {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  .category h4{
+    color: var(--colerp);
+  }
+  .textCategory{
+    color: var(--colerp);
+    margin-left: 50px;
+    font-size: 30px;
+  }
