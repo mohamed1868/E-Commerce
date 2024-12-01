@@ -15,6 +15,7 @@ const { cartItem, product, productImg, productInfo, cartItemSelection , Quantity
 export default function ShopCard() {
   let disPatch = useDispatch()
   let arrayMaxNum = [1 , 2 , 3]
+  let [massageMaxNumber , setMassageMax ] = useState('')
   let detalisProducrt = useSelector((state)=>state.Card.items)
   let [notFoundData , setMassage] = useState('')
   let [allData , setData] = useState([])
@@ -32,17 +33,30 @@ export default function ShopCard() {
 
   function removeProduct(id){
      let x =detalisProducrt.filter((ele)=> ele.id != id )
+     setData(x)     
      disPatch(removeToCard(id))
-     setData(x)
+
   }
   function updateNumbersProduct(detalis){
-    disPatch(updateToNumbers(detalis))
+    if(detalis.max >=detalis.value ){
+          disPatch(updateToNumbers(detalis))
+    }else{
+      setMassageMax('You have exceeded the limit.')
+      setTimeout(() => {
+        setMassageMax('')
+      }, 5000);
+    }
+   
+
   }
   return (
     <>
       <div className={`${logocard} container`}>
         <h2>Card</h2>
       </div>
+      {massageMaxNumber ?  <div className="alert alert-danger" role="alert">
+ {massageMaxNumber}
+</div>  : ''}
      {allData.length > 0 ? allData.map((ele)=> <div key={ele.id} className={`${cartItem} container`}>
             <div className={product}>
               <Link to={`/Product/${ele.id}`}>
@@ -64,7 +78,7 @@ export default function ShopCard() {
             <div className={cartItemSelection}>
         <span className={`${QuantitySHop} `}>Quantity</span>
         <form className={formcard} >
-          <select  onChange={(el)=>updateNumbersProduct({value: el.target.value , ids: ele.id} )}>
+          <select  onChange={(el)=>updateNumbersProduct({value: parseInt(el.target.value)  , ids: ele.id , max: ele.mix} )}>
              <option  >{ele.numbers}</option> 
 
           {arrayMaxNum.filter((num) => num !== ele.numbers) .map((num) => (

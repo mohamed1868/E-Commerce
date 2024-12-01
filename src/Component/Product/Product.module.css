@@ -34,3 +34,16 @@
     opacity: 0.8;
     font-size: 12px;
   }
+  .ContainerAddNums{
+   height: 32.5px;
+   margin-left: 20px;
+   border-color: #DB4444;
+  }
+  .ContainerAddNums button{
+    color: var(--colerp);
+    border-color: #DB4444;
+  }
+  .ContainerAddNums button:hover  {
+    background-color: #DB4444;
+    border-color: #DB4444;
+  }

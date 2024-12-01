@@ -3,17 +3,17 @@
 
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { redirect, useParams } from 'react-router-dom'
 import style from './Product.module.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { addToCard } from '../Store/Card'
+import { addToCard, addToCardFromProduct } from '../Store/Card'
 
-let {detelseproduct , MassageMaxValue } = style
+let {detelseproduct , MassageMaxValue , ContainerAddNums } = style
 export default function Product() {
   let dispatch = useDispatch()
   let allData = useSelector((state)=> state.Card.items)
+   let pramase = useParams()
   let [massageMaxNumber , setMassageMax ] = useState('')
- let pramase = useParams()
  let [detelse , setdetelsr] = useState([])
  let [erroe , seterror] = useState('Not Found Product')
 
@@ -28,16 +28,12 @@ export default function Product() {
   seterror('Not Found Data')
  }
 }
-  
+
 
 function addcard(ele){
- if(allData.length > 0){
-  let x = allData.find((eleo)=> eleo.id == ele.id )
-
-  if(x){
-       if(x.numbers < 3 && x.mix > x.numbers )    {
+       if( ele.data.max >= ele.numbers){
       
-        dispatch(addToCard(ele))
+        dispatch(addToCardFromProduct(ele))
        }else{
 
         setMassageMax('You have exceeded the limit.')
@@ -45,13 +41,25 @@ function addcard(ele){
           setMassageMax('')
         }, 3000);
        }
- }else{
-  dispatch(addToCard(ele))
- }
-  }else{
-    dispatch(addToCard(ele))
-  }
+ 
   
+}
+function Provide(){
+    let button = document.querySelector('.numProduct')
+  let currentNumber  = parseInt(button.textContent) 
+  if(currentNumber < 3 ){
+     button.textContent =  currentNumber + 1 
+  }
+
+ 
+}
+function Reduce(){
+  let button = document.querySelector('.numProduct')
+  let currentNumber  = parseInt(button.textContent) 
+  if(currentNumber > 1){
+      button.textContent -= 1 
+  }
+
 }
 
 
@@ -75,14 +83,20 @@ useEffect(()=>{
        <div className='col-5'>
         <img src={`${el.img}`} className='w-75' ></img>
        </div>
-       <div className='col-7'>
+       <div className='col-7 '>
              <h1>Name : {el.title}</h1>
              <h3>Price : {el.price.toFixed(2)} EG</h3>
              <h4>Category : {el.cat_prefix}</h4>
              <h5>available : {el.max}</h5>
              <p className={MassageMaxValue}>Maximum value 3</p>
-             <button onClick={()=>addcard(el) }  >Add Product</button>
-       </div>
+
+             <button onClick={()=>addcard({data : el , numbers: parseInt( document.querySelector('.numProduct').textContent) }) }  >Add Product</button>
+                      <div className={`${ContainerAddNums} btn-group`} role="group" aria-label="Basic outlined example">
+              <button onClick={()=>Reduce()} type="button" className="btn btn-outline-primary">-</button>
+                <button type="button " className="btn btn-outline-primary numProduct">1</button>
+              <button onClick={()=>Provide()} type="button" className="btn btn-outline-primary">+</button>
+             </div>
+         </div>
     
     </div>
 
