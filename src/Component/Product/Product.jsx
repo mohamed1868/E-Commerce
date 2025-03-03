@@ -7,6 +7,7 @@ import { redirect, useParams } from 'react-router-dom'
 import style from './Product.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCard, addToCardFromProduct } from '../Store/Card'
+import { data } from '../../Data'
 
 let {detelseproduct , MassageMaxValue , ContainerAddNums } = style
 export default function Product() {
@@ -17,17 +18,17 @@ export default function Product() {
  let [detelse , setdetelsr] = useState([])
  let [erroe , seterror] = useState('Not Found Product')
 
- async function getProduct() {
-  try{
+//  async function getProduct() {
+//   try{
 
-       let x = await axios.get(`http://localhost:5005/products?id=${pramase.id}`)
-       setdetelsr(x.data)
+//        let x = await axios.get(`http://localhost:5005/products?id=${pramase.id}`)
+//        setdetelsr(x.data)
    
-  }
- catch(error){
-  seterror('Not Found Data')
- }
-}
+//   }
+//  catch(error){
+//   seterror('Not Found Data')
+//  }
+// }
 
 
 function addcard(ele){
@@ -67,7 +68,10 @@ useEffect(()=>{
   
 } ,[allData])
 useEffect(()=>{
-  getProduct()
+  // getProduct()
+  setdetelsr([data.products.find((el) => el.id == pramase.id)]);
+
+  console.log(data.products)
 
 } ,[])
 

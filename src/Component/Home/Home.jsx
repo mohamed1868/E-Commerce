@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCard } from '../Store/Card';
 import styles from './Home.module.css'
+import { data } from '../../Data';
 
 
 const { product, productImg ,ProductsAll ,nameproducss , MassageMaxValue } = styles;
@@ -48,19 +49,21 @@ export default function Home() {
   }
 
 
+//  async function getMen() {
+//   try{
 
- async function getMen() {
-  try{
+//        let x = await axios.get(`http://localhost:5005/products`)
+//        setProducts(x.data)
+//   }
+//  catch(error){
+//       setError('Not Found Data')
+//  }
+// }
 
-       let x = await axios.get(`http://localhost:5005/products`)
-       setProducts(x.data)
-  }
- catch(error){
-      setError('Not Found Data')
- }
-}
 useEffect(()=>{
-  getMen()
+  // getMen()
+  setProducts(data.products)
+
 } ,[])
 
 

@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 import styles from "./Category..module.css";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { data } from '../../Data';
 
 
 const { category, categoryImg, categoryTitle ,CategoryAll ,textCategory} = styles;
@@ -13,21 +14,21 @@ export default function Category() {
    let [getcategorys , setcategorys] = useState([])
    let [getError , setError] = useState('')
 
-  async function getCategory() {
-   try{
+  // async function getCategory() {
+  //  try{
 
-        let x = await axios.get('http://localhost:5005/categories')
-        setcategorys(x.data)
-   }
-  catch(error){
-       setError('Not Found Data')
-  }
-         
+  //       let x = await axios.get('http://localhost:5005/categories')
+  //       setcategorys(x.data)
+  //  }
+  // catch(error){
+  //      setError('Not Found Data')
+  // }
+        
+  // }
 
-
-  }
   useEffect(()=>{
-    getCategory()
+    // getCategory()
+    setcategorys(data.categories)
   } ,[])
 
 

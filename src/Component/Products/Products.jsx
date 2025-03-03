@@ -8,6 +8,7 @@ import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCard } from '../Store/Card';
+import { data } from '../../Data';
 
 
 const { product, productImg ,ProductsAll ,nameproducss , MassageMaxValue } = styles;
@@ -57,6 +58,7 @@ export default function Products() {
 }
 useEffect(()=>{
   getMen()
+  setProducts([data.products.find((el) => el.cat_prefix == params.prefix)])
 } ,[])
 
 
