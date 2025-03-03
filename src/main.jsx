@@ -15,7 +15,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistsStore} >
-    <BrowserRouter>
+    <BrowserRouter  basename="/E-Commerce">
       <App />
     </BrowserRouter>  
     </PersistGate>
